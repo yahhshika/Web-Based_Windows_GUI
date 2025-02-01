@@ -1,0 +1,24 @@
+.desktop{
+  overflow: hidden;
+  width: 100vw;
+}
+
+
+.taskbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  height: 44px;
+  width: 100%;
+  border: 1px solid grey;
+  background-color: yellow;
+}
+
+.icon{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+}
