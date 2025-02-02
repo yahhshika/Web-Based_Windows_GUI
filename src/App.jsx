@@ -1,45 +1,11 @@
-import { useState, useRef } from "react";
+// import { useState, useRef } from "react";
 import TaskBar from "./components/TaskBar";
 import "./App.css";
+import AppIcon from "./components/AppIcon";
+import bg from "./assets/bg.png";
 
 function App() {
-  let temp = useRef();
-  let cursor = useRef({ dom: null, x: 0, y: 0 });
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleDragStart = (e) => {
-    // OndragStart
-    cursor = {
-      dom: e.target,
-      x: e.clientX,
-      y: e.clientY,
-    };
-  };
-
-  const handleDrop = (e) => {
-    //  Ondrop
-    e.preventDefault();
-    if (cursor.dom == null) return;
-    let toMoveX = e.clientX - cursor.x;
-    let toMoveY = e.clientY - cursor.y;
-    let distance = {
-      x: Math.round(toMoveX / 100) * 100,
-      y: Math.round(toMoveY / 100) * 100,
-    };
-    temp.current.style.left = position.x + distance.x + "px";
-    temp.current.style.top = position.y + distance.y + "px";
-    setPosition({ x: position.x + distance.x, y: position.y + distance.y });
-  };
-
   // Right Click Functionality
-  let set;
-  const TwoSecVisiblity = (element) => {
-    element.style.visibility = "visible";
-    clearTimeout(set);
-    set = setTimeout(() => {
-      element.style.visibility = "hidden";
-    }, 2000);
-  };
 
   const handleRightClick = (e) => {
     e.preventDefault();
@@ -67,8 +33,7 @@ function App() {
         className="desktop"
         onContextMenu={handleRightClick}
         onClick={handleClick}
-        onDrop={handleDrop}
-        onDragOver={(e) => e.preventDefault()}
+        // onDragOver={(e) => e.preventDefault()}
       >
         <div className="contextMenu">
           <ul>
@@ -94,38 +59,11 @@ function App() {
             </li>
           </ul>
         </div>
-        <div
-          className="icon"
-          ref={temp}
-          draggable
-          onDragStart={handleDragStart}
-        >
-          122
-        </div>
-        <div
-          className="icon"
-          ref={temp}
-          draggable
-          onDragStart={handleDragStart}
-        >
-          455
-        </div>
-        <div
-          className="icon"
-          ref={temp}
-          draggable
-          onDragStart={handleDragStart}
-        >
-          6777
-        </div>
-        <div
-          className="icon"
-          ref={temp}
-          draggable
-          onDragStart={handleDragStart}
-        >
-          9000
-        </div>
+        <AppIcon size={80} Name="calulator" />
+        <AppIcon size={80} Name="notepad" />
+        <AppIcon size={80} Name="chrome browser" />
+        <AppIcon size={80} Name="New folder" />
+
         <TaskBar />
       </div>
     </>

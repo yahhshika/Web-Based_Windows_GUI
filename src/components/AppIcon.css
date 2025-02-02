@@ -1,0 +1,21 @@
+.icon{
+    background-color: rgba(63, 61, 61, 0);
+  
+    position: relative;
+    /* margin: 25px; */
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    color: white;
+    align-items: center;
+  }
+  
+  .appSvg{
+    background-color: aqua;
+
+  }
+  .appName{
+    text-align: center;
+  }

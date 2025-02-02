@@ -1,14 +1,21 @@
 footer{
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    height: 44px;
+    height: 58px;
     width: 100%;
     border: 1px solid grey;
     background-color: yellow;
   }
   .taskbar{
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     
+  }
+
+  .appicon{
+    padding: 4px;
+    display: flex;
+    gap: 4px;
   }
